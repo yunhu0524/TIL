@@ -1,7 +1,7 @@
 package algorithms;
 
 import java.util.Scanner;
-
+//숫자만 추출
 class String9 {
 	public int solution(String s) {
 		int answer = 0 ;

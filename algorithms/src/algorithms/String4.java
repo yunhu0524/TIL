@@ -3,6 +3,7 @@ package algorithms;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//단어 뒤집기 
 class String4 {
 	public ArrayList<String> solution(int n, String[] str){
 		ArrayList<String>answer = new ArrayList<>();
@@ -17,6 +18,7 @@ class String4 {
 				rt--;
 			}
 			String tmp = String.valueOf(s);
+			//스트링으로 바꿔준다
 			answer.add(tmp);
 		}
 		

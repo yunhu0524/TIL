@@ -1,0 +1,32 @@
+package algorithms2;
+
+import java.util.Scanner;
+
+class String7 {
+	public String solution(String str) {
+		
+		String answer = "Yes";
+		int len = str.length();
+		for(int i = 0; i<len/2; i++) {
+			if(str.charAt(i)!=str.charAt(len-i-1)) {
+				return "No";
+			}
+		}
+		/*String answer ="No";
+		String tmp = new StringBuilder(str).reverse().toString();
+		if(str.equalsIgnoreCase(tmp)) {
+			answer="Yes";
+		}*/
+		
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		String7 T = new String7();
+		Scanner sc = new Scanner(System.in);
+		
+		String str = sc.next();
+		System.out.println(T.solution(str));
+	}
+
+}

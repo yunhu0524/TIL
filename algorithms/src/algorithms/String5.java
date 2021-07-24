@@ -9,10 +9,10 @@ class String5 {
 		char [] s = str.toCharArray(); // str 단어를 문자 배열로  s 에 저장
 		int lt=0, rt=str.length()-1;
 		while(lt<rt) {
-			if(!Character.isAlphabetic(lt)) {
+			if(!Character.isAlphabetic(s[lt])) {
 				lt++;
 			}
-			else if (!Character.isAlphabetic(rt)) {
+			else if (!Character.isAlphabetic(s[rt])) {
 				rt--;
 			}
 			else {
@@ -32,7 +32,7 @@ class String5 {
 		String5 T = new String5();
 		Scanner sc = new Scanner(System.in);
 		
-		String  str = new String();
+		String  str = sc.next();
 		System.out.println(T.solution(str));
 	}
 
