@@ -25,7 +25,7 @@ class int1 {
 			arr[i]=sc.nextInt();
 		}
 		for(int x: T.solution(n, arr)) {
-			System.out.println(x + "");
+			System.out.println(x + " ");
 		}
 	}
 
