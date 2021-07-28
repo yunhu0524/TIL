@@ -1,27 +1,28 @@
 package algorithms2;
 
 import java.util.Scanner;
-
+//숫자만 추출
 class String9 {
-	public int solution(String str) {
-		String answer = "";
-		
-		for(char x : str.toCharArray()) {
-			if(Character.isDigit(x)) {
-				answer += x;
+	public int solution(String s) {
+		int answer = 0 ;
+		//String answer = "";
+		for(char x: s.toCharArray()) {
+			//if(Character.isDigit(x)) answer += x;
+			if(x>=48 && x<=57) {
+				answer = answer*10+(x-48);
 			}
 		}
 		
-		return Integer.parseInt(answer);
+		//return Integer.parseInt(answer);
+		return answer;
 	}
 
 	public static void main(String[] args) {
 		String9 T = new String9();
-		Scanner sc = new  Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		String str = sc.next();
 		System.out.println(T.solution(str));
-		
 	}
 
 }
