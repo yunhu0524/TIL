@@ -216,3 +216,34 @@ USA
 ### iframe
 
 - 웹 페이지 내에 웹 페이지를 표시하는데 사용
+
+### Javascript
+
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use JavaScript to Change Text</h2>
+<p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script>
+
+</body>
+</html>
+```
+
+### meta
+
+- 문자 집합, 페이지 설명, 키워드, 문서의 저자, 뷰포트 설정을 지정하는데 사용
+
+```
+<meta charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="John Doe">
+```
