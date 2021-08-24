@@ -1,0 +1,64 @@
+.container {
+  margin: 50px 0 120px;
+}
+.tracking-number {
+  text-align: center;
+  background-color: aquamarine;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.number-input {
+  width: 420px;
+  height: 59px;
+}
+.submit {
+  width: 138px;
+  height: 60px;
+}
+
+/* 중앙 banner */
+.banner-img {
+  position: absolute;
+}
+.app-icon {
+  position: relative;
+  width: 134px;
+  height: 135px;
+  margin: 0;
+}
+.application {
+  position: relative;
+}
+.application-banner {
+  position: relative;
+  margin: 24px 0 11px 0;
+  color: white;
+}
+.point {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 34pt;
+}
+
+/* customer */
+.customer-center {
+  text-align: center;
+  border: solid 1px #d7d7d7;
+  border-radius: 8px;
+  padding: 40px 0;
+}
+
+.customer-icon {
+  padding-bottom: 20px;
+}
+.customer-point {
+  font-size: 20pt;
+  color: #e50012;
+  font-weight: bold;
+}
