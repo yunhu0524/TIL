@@ -13,7 +13,7 @@
 > attachment : <br>
 > fixed - 스크롤 내려갈때 같이 내려간다.<br>
 > scroll - 이미지 고정
-> <br> > <br>
+> <br> <br>
 
 <p style="
 color: black;
@@ -22,7 +22,7 @@ color: black;
   Some text
 </p>
 
-```
+```css
 p {
   border-left: 6px solid red;
   background-color: lightgrey;
