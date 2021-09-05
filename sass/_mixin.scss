@@ -1,0 +1,9 @@
+// Mixin
+@mixin fontSizeBgColor($fontSize: 20px, $bgColor) {
+  font-size: $fontSize;
+  background-color: $bgColor;
+}
+@mixin linkStyle($textColor, $textDeco: none) {
+  color: $textColor;
+  text-decoration: $textDeco;
+}
