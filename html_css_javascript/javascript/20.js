@@ -1,9 +1,11 @@
-<script>
-'use strict'; // 전역의 선두에 추가
+const readline = require('readline');
 
-function foo() {
-  x = 10; // ReferenceError: x is not defined
-}
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-foo();
-</script>
+rl.question('What do you think of Node.js? ', (answer) => {
+  console.log(`Thank you for your valuable feedback: ${answer}`);
+  rl.close();
+});

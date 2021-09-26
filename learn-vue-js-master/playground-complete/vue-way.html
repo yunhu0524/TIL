@@ -12,11 +12,9 @@
   <script>
     var div = document.querySelector('#app');
     var viewModel = {};
-
     // Object.defineProperty(대상 객체, 객체의 속성, {
-    //   // 정의할 내용
+    // 정의할 내용
     // })
-
     (function() {
       function init() {
         Object.defineProperty(viewModel, 'str', {
@@ -31,11 +29,9 @@
           }
         });
       }
-
       function render(value) {
         div.innerHTML = value;
       }
-
       init();
     })();    
   </script>
