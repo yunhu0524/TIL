@@ -16,7 +16,7 @@
 
     //HTTP 요청 전송
     // 새로운 todo를 생성하기 위해  페이로드를 서버에 전송해야 한다.
-    xhr.set(JSON.stringify({id: 4, content: 'Angular', completed:false}));
+    xhr.send(JSON.stringify({id: 5, content: 'Aaaaa', completed:false}));
 
     //load 이벤트는 요청이 성공적으로 완료된 경우 발생한다.
     xhr.onload = () => {

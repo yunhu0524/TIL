@@ -42,7 +42,7 @@ PATCH|modify|리소스의 일부 수정|O
 DELETE|delete|모든/특정 리소스 삭제|X
 
 리소스에 대한 행위는 HTTP 요청 메서드를 통해 표현하며 URI에 표현하지 않는다. 예를 들어, 리솟를 취득하는 경우에는 GET, 리소스를 삭제하는 경우에는 DELETE를 사용하여 리소스에 대한 행우를 명확히 표현한다.
-```js
+```shell
 # bad
 GET /todos/delete/1
 

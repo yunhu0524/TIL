@@ -9,14 +9,14 @@
 
     // HTTP 요청 초기화
     // todos 리소스에서 모든 todo를  취득(index)
-    xhr.open('POST', '/todos');
+    xhr.open('PATCH', '/todos/1');
 
     // 요청 몸체에 담아 서버로 전송할 페이로드의 MIME 다입을 지정
     xhr.setRequestHeader('content-type', 'application/json');
 
     //HTTP 요청 전송
     // 새로운 todo를 생성하기 위해  페이로드를 서버에 전송해야 한다.
-    xhr.set(JSON.stringify({ id: 4, content: 'React', completed: true }));
+    xhr.send(JSON.stringify({ id: 1, content: 'React12333',  }));
 
     //load 이벤트는 요청이 성공적으로 완료된 경우 발생한다.
     xhr.onload = () => {
