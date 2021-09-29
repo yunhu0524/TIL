@@ -5,9 +5,9 @@ plus(8,60);
 
 const player = {
   name:"nico",
-  sayHello: function(){
-    console.log("hello");
+  sayHello: function(a){
+    console.log("hello "+ a +" nice");
   }
 };
 console.log(player.name);
-player.sayHello();
+player.sayHello("haha");
