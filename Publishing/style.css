@@ -1,0 +1,21 @@
+body {
+  font-weight: 300;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+section h1 {
+  font-size: 2em;
+}
+section p {
+  font-size: 1em;
+  line-height: 3em;
+  color: #999;
+}
+section h3 {
+  font-size: 20px;
+  color: red;
+  text-decoration: underline;
+  padding: 30px;
+  border: 1px solid #000;
+}
