@@ -1,0 +1,20 @@
+.box {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  &:before {
+    content: "\f5d1";
+    font-family: fontawesome;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: aquamarine;
+    color: seagreen;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+  }
+}
