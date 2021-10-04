@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+body .container header > a {
+  background-color: teal;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+body .container > p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+body .container .btn-gototop {
+  background-color: pink;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=style.css.map */
