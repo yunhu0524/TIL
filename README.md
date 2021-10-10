@@ -4,6 +4,7 @@ Javascript<br>
 Publishing<br>
 * Font_Awesome<br>
 @import url('https://kit.fontawesome.com/d53ec31de0.js')
+<script src="https://kit.fontawesome.com/c4234ead32.js" crossorigin="anonymous"></script>
 * XEICON<br>
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css')
 * [눈누 폰트](url:'https://noonnu.cc/')
