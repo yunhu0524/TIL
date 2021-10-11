@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(item, index) in todoItems" :key="index" class="shadow">
+    <transition-group name="list" tag="ul">
+      <li v-for="(item, index) in propsdata" :key="index" class="shadow">
         <i class="checkBtn fas fa-check" 
         :class="{checkBtnCompleted: item.completed}" 
         @click="toggleComplete(item, index)">
@@ -12,37 +12,21 @@
           <i class="fas fa-trash-alt"></i>
         </span>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
 <script>
-export default {
-  data(){
-    return{
-      todoItems:[]
-    }
-  },
-  created(){
-    if(localStorage.length>0){
-      for(var i=0; i<localStorage.length; i++){
-        if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-      }
-    }
-  },
+export default { 
+  props:['propsdata'],
   methods:{
     removeTodo(item, index){
-      console.log(item, index);
-      localStorage.removeItem(item);
-      this.todoItems.splice(index, 1);
+      //console.log(item, index);
+      this.$emit('removeItem', item, index);
+      
     },
-    toggleComplete(item){
-      item.completed = !item.completed;
-      // 로컬 스토리지에 정보를 갱신
-      localStorage.removeItem(item.item);
-      localStorage.setItem(item.item, JSON.stringify(item));
+    toggleComplete(item, index){
+      this.$emit('toggleItems', item, index)
     }
   }
 }
@@ -81,5 +65,13 @@ li {
   margin-left: auto;
   color: #de4343;
 }
+/* transition css */
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 </style>
-

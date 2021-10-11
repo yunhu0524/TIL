@@ -4,58 +4,77 @@
     <span class="addContainer" @click="addTodo">
       <i class="fas fa-plus addBtn"></i>
     </span>
+
+    <Modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        경고
+        <i
+          class="closeModalBtn fa fa-times"
+          aria-hidden="true"
+          @click="showModal = false"
+        >
+        </i>
+      </h3>
+      <p slot="body">할 일을 입력하세요.</p>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
+
 export default {
   data(){
     return{
       newTodoItem:'',
+      showModal:false,
     }
   },
   methods:{
     addTodo(){
       if(this.newTodoItem !== ''){
-    let obj = {completed: false, item: this.newTodoItem};
-      // console.log(this.newTodoItem);
-      // 저장하는 로직
-      // localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      // obj 값이 string(문자열)로 들어간다
-      localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
-      this.clearInput();
+        this.$emit('addTodoItem', this.newTodoItem)
+        this.clearInput();
+      } else{
+        this.showModal = !this.showModal
       }
     },
     clearInput(){
       this.newTodoItem = '';
     }
+  },
+  components:{
+    Modal : Modal,
   }
 }
 </script>
 
 <style scoped>
-input:focus{
+input:focus {
   outline: none;
 }
-.inputBox{
+.inputBox {
   background: white;
   height: 50px;
   line-height: 50px;
   border-radius: 5px;
 }
-.inputBox input{
+.inputBox input {
   border-style: none;
   font-size: 0.9rem;
 }
-.addContainer{
+.addContainer {
   float: right;
-  background: linear-gradient(to right, #6478FB,#8763FB);
+  background: linear-gradient(to right, #6478fb, #8763fb);
   display: block;
   width: 3rem;
-  border-radius: 0  5px 5px 0;
+  border-radius: 0 5px 5px 0;
 }
-.addBtn{
+.addBtn {
   color: white;
   vertical-align: middle;
+}
+.closeModalBtn {
+  color: #42b983;
 }
 </style>
