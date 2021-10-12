@@ -1,13 +1,52 @@
+.container .sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: aquamarine;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container input[id="trigger"]:checked ~ .sidebar {
+  left: 0;
+}
+
+.container input[id="trigger"]:checked + label {
+  left: 250px;
+}
+
 .container input[id="trigger"] {
   display: none;
 }
 
+.container input[id="trigger"]:checked + label span:nth-child(1) {
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container input[id="trigger"]:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+.container input[id="trigger"]:checked + label span:nth-child(3) {
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 .container label[for="trigger"] {
-  border: 5px solid rebeccapurple;
   width: 30px;
   height: 20px;
   display: block;
-  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .container label[for="trigger"] span {
@@ -17,17 +56,20 @@
   width: 100%;
   position: absolute;
   left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
-.container label[for="trigger"] span :nth-child(1) {
+.container label[for="trigger"] span:nth-child(1) {
   top: 0;
 }
 
-.container label[for="trigger"] span :nth-child(2) {
+.container label[for="trigger"] span:nth-child(2) {
   top: 50%;
 }
 
-.container label[for="trigger"] span :nth-child(3) {
+.container label[for="trigger"] span:nth-child(3) {
   top: 100%;
 }
 /*# sourceMappingURL=style.css.map */
