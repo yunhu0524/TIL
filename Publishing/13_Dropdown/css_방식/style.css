@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  color: #333;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+body a {
+  text-decoration: none;
+  color: #333;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+section .inner {
+  width: 1150px;
+  margin: auto;
+}
+
+section .inner h1 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+section .inner .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+
+section .inner .items .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+section .inner .items .item:nth-child(1) .item-list {
+  background-color: #195fab;
+}
+
+section .inner .items .item:nth-child(2) .item-list {
+  background-color: #5049a9;
+}
+
+section .inner .items .item:nth-child(3) .item-list {
+  background-color: #8c66c1;
+}
+
+section .inner .items .item:nth-child(1) .item-desc {
+  border: 4px solid #195fab;
+}
+
+section .inner .items .item:nth-child(2) .item-desc {
+  border: 4px solid #5049a9;
+}
+
+section .inner .items .item:nth-child(3) .item-desc {
+  border: 4px solid #8c66c1;
+}
+
+section .inner .items .item:hover .item-desc {
+  height: 200px;
+  padding: 5px 15px;
+}
+
+section .inner .items .item .item-list {
+  background-color: aquamarine;
+  text-align: center;
+  color: #fff;
+  padding: 25px;
+}
+
+section .inner .items .item .item-list h4 {
+  font-weight: 300;
+}
+
+section .inner .items .item .item-list .btns .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  margin: 3px;
+  width: 80px;
+  display: inline-block;
+}
+
+section .inner .items .item .item-list .btns .download {
+  width: 200px;
+}
+
+section .inner .items .item .item-desc {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  border: 3px solid #000;
+  font-size: 14px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section .inner .items .item .item-desc ul {
+  background-color: #eee;
+  border-radius: 5px;
+  list-style: none;
+  margin: 0 0 15px 0;
+  padding: 5px;
+}
+
+section .inner .items .item .item-desc ul li::before {
+  content: " - ";
+  margin: 0 5px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 body {
   font-family: "Noto Sans KR", sans-serif;
   margin: 0;
@@ -60,22 +59,6 @@ a {
   color: #fff;
   padding: 3px 10px;
   border-radius: 30px;
-}
-
-body {
-  font-family: "Noto Sans KR", sans-serif;
-  margin: 0;
-  -webkit-columns: #222;
-          columns: #222;
-  line-height: 1.5em;
-  font-size: 15px;
-  background-color: #eee;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-  color: #222;
 }
 
 .container2 {
