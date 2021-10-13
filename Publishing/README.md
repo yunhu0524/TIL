@@ -1,4 +1,13 @@
 Publishing<br>
+* 폰트
+```css 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+```
+
 * Font_Awesome<br>
 @import url('https://kit.fontawesome.com/d53ec31de0.js')
 <script src="https://kit.fontawesome.com/c4234ead32.js" crossorigin="anonymous"></script>
