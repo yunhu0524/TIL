@@ -27,7 +27,7 @@ export default {
   },
   methods:{
     addOneItem(item){
-      let obj = {completed: false, item: item};
+      const obj = {completed: false, item: item};
         // console.log(this.newTodoItem);
         // 저장하는 로직
         // localStorage.setItem(this.newTodoItem, this.newTodoItem);
@@ -52,7 +52,7 @@ export default {
   },
     created(){
       if(localStorage.length>0){
-        for(var i=0; i<localStorage.length; i++){
+        for(let i=0; i<localStorage.length; i++){
           if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
             this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
           }
