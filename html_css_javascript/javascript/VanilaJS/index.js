@@ -85,4 +85,14 @@ emptyObject.get_data=function(){
 console.log(emptyObject);
 console.log(emptyObject.get_data());
 
-
+//propertype 
+function User(age, name){
+  this.age = age;
+  this.name = name;
+}
+User.prototype.message = function(){
+  return 'Hello';
+}
+User.prototype.hobby = 'coding';
+const dave = new User(10, 'Dave');
+console.log(dave.age, dave.name, dave.hobby);
