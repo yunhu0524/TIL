@@ -96,3 +96,44 @@ User.prototype.message = function(){
 User.prototype.hobby = 'coding';
 const dave = new User(10, 'Dave');
 console.log(dave.age, dave.name, dave.hobby);
+
+//this 
+const user4 = {
+  age:10,
+  name:'Dave',
+  details:{
+    hobby:'coding',
+    get_hobby:()=>'coding'
+  }
+};
+
+console.log(user4.details.get_hobby());
+
+// getter / setter
+const setterUser = {
+  age: 10,
+  name: 'Dave Lee',
+  
+  get get_age(){
+    return this.age
+  },
+  set set_age(value){
+    this.age = value;
+  }
+};
+console.log(setterUser.get_age);
+setterUser.set_age = 20;
+console.log(setterUser.get_age);
+
+// 생성자 함수
+function newUser(age, name){
+  this.age = age;
+  this.name = name;
+  this.get_data = function(){
+    return this.age;
+  }
+}
+// 만들어진 함수를 dave5에 넣어서 사용
+const dave5 = new newUser(10, 'Dave')
+console.log(dave5.get_data());
+
