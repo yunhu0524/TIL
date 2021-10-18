@@ -5,12 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .name{
+      color: yellowgreen;
+    }
+  </style>
 </head>
 <body>
   
   <div id="app">
     <!-- <h1 id="abc1234">{{num}}</h1> -->
-    <h1 v-bind:id="uuid" v-bind:class="name">{{num}}</h1>
+    <h1 v-bind:id="uuid" v-if="name">{{num}}</h1>
     <h1>{{doubleNum}}</h1>
     <div v-if="loading">
       Loading...
@@ -33,7 +38,7 @@
       data:{
         num: 10,
         uuid:'abc1234',
-        name:'text-blue',
+        name:true,
         loading: true,
         message:''
       },
