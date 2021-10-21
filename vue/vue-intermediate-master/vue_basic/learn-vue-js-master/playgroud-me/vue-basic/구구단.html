@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+      <h1>{{first}} * {{second}} 는?</h1>
+    <form @submit="onSubmitForm">
+      <input type="number" ref="answer" v-model="value">
+      <button type="submit">입력</button>
+    </form>
+    <div id="result">{{result}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:'#root',
+      data:{
+        first: Math.ceil(Math.random()*9),
+        second: Math.ceil(Math.random() * 9),
+        value:'',
+        result:'',
+      },
+      methods:{
+        onSubmitForm(e){
+          e.preventDefault();
+          if(this.first*this.second === parseInt(this.value)) { //parseInt 문자열을 int 값으로 변환
+            this.result = '정답!';
+            this.first = Math.ceil(Math.random()*9);
+            this.second = Math.ceil(Math.random()*9);
+            this.value='';
+            this.$refs.answer.focus();
+          } else{
+            this.result = '땡!'
+            this.value = '';
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

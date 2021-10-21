@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- if 가 true 일때 실행된다. -->
+    <h1 v-if="liked">{{like}}</h1> 
+    <!-- else if 가 false 일때 -->
+    <button v-else @click='onClickButton'>Like</button>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#root',
+      data:{
+        liked: false,
+        like:'좋아요'
+      },
+      methods:{
+        onClickButton(){
+          this.liked = true;
+          console.log('hi');
+        },
+      },
+    })
+  </script>
+</body>
+</html>
