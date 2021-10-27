@@ -221,6 +221,16 @@ section {
   color: #cfd8dc;
 }
 
+.slide-prev-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(-2px);
+}
+
+.slide-next-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(2px);
+}
+
 .arrow-container {
   display: flex;
 }
@@ -230,7 +240,7 @@ section {
   list-style: none;
   padding: 1rem 0;
   margin: 0;
-  overflow: hidden;
+  overflow: none;
 }
 
 .class-card {
@@ -254,7 +264,6 @@ section {
 .class-image {
   /* 사이즈가 큰 이미지를 작은 블럭 내에 넣을 때 호환성을 위해 max-width/max-height 를 사용해야 함 */
   max-width: 240px;
-
   /* border-radius: 블럭 모서리를 둥글게 하는 CSS 기능
      top-left | top-right | bottom-right | bottom-left */
   border-radius: 8px 8px 0 0;
@@ -286,12 +295,17 @@ section {
 .class-desc {
   width: 100%;
   margin-top: 1rem;
+  color: #545e6f;
+}
+
+.class-desc:hover {
+  color: #2186c4;
 }
 
 .class-title {
   font-weight: bold;
-  color: #545e6f;
   width: 100%;
+  color: inherit;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -300,8 +314,8 @@ section {
 
 .class-detail {
   font-size: 0.9rem;
-  color: #545e6f;
   line-height: 1.5rem;
+  color: inherit;
 }
 
 .roadmap-desc {
@@ -333,6 +347,47 @@ footer {
 .footer-copyright {
   color: #545e6f;
   margin: 1rem 0.5rem;
+}
+
+#backtotop {
+  background-color: rgb(47, 48, 89);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  /* width 와 height에 중간 값을 radius에 넣어주면 원이 된다. */
+  border-radius: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition-property: background-color, opacity, visibilty;
+  transition-duration: 0.3s, 0.5s, 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+/* 아이콘 적용 */
+#backtotop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-size: 1.5rem;
+  line-height: 40px;
+  color: #fff;
+}
+#backtotop.show {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgb(47, 48, 89);
+}
+#backtotop.show:hover {
+  cursor: pointer;
+  background-color: #0d47a1;
+}
+ul li img:hover {
+  cursor: grab;
+}
+
+ul li img:active {
+  cursor: grabbing;
 }
 
 @media only screen and (min-width: 1200px) {
