@@ -73,6 +73,8 @@ export default {
   body{
     text-align: center;
     background-color: #f6f6f6;
+    max-width: 800px;
+    margin: 0 auto;
   }
   input{
     border-style: groove;
