@@ -5,7 +5,6 @@
         <i class="checkBtn fas fa-check" 
         :class="{checkBtnCompleted: item.completed}" 
         @click="toggleComplete(item, index)">
-
         </i>
         <span :class="{textCompleted:item.completed}">{{item.item}}</span>
         <span class="removeBtn" @click="removeTodo(item, index)">
