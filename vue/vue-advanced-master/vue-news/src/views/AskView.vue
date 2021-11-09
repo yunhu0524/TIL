@@ -11,8 +11,8 @@
 export default {
   created() {
     this.$store.dispatch('FETCH_ASK')
-      .then(() => console.log('success'))
-      .catch(() => console.log('fail'));
+      .then()
+      .catch();
   }
 }
 </script>

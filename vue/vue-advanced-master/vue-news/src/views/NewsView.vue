@@ -2,7 +2,9 @@
   <div>
     <p v-for="news in this.$store.state.news" :key="news.id">
       <a :href="news.url">{{ news.title }}</a><br>
-      <small>{{ news.time_ago }} by {{ news.domain }}</small>
+      <small>{{ news.time_ago }} by 
+        <router-link :to="`/user/${news.user}`">{{ news.domain }}</router-link>
+        </small>
     </p>
   </div>
 </template>
@@ -11,8 +13,8 @@
 export default {
   created() {
     this.$store.dispatch('FETCH_NEWS')
-      .then(() => console.log('success'))
-      .catch(() => console.log('fail'));
+      .then()
+      .catch()
   }
 }
 </script>
