@@ -19,7 +19,6 @@ export default {
 body {
   margin: 0;
 }
-
 a {
   color: #34495e;
   text-decoration: none;
