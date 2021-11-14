@@ -1,17 +1,18 @@
 <template>
   <div>
-    user
+   <p>name: {{this.$store.state.user.id}}</p>
+   <p>karma: {{this.$store.state.user.karma}}</p>
+   <p>created: {{this.$store.state.user.created}}</p>
+   <p>about: {{this.$store.state.user.about}}</p>
   </div>
 </template>
 
 <script>
-import { fetchUser } from '../api/index.js';
 
 export default {
   created() {
-    fetchUser('davideast')
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
+    const userName = this.$route.params.id;
+    this.$store.dispatch('FETCH_USER',userName)
   }
 }
 </script>
