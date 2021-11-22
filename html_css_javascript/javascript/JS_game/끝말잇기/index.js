@@ -1,19 +1,33 @@
+const dic = [];
+const dicTag = document.querySelector("#dic");
+
+const wordTag = document.querySelector("#word");
+let word = wordTag.textContent;
+
+const inputTag = document.querySelector("#input");
+let input = inputTag.value;
+
+const errorTag = document.querySelector("#error");
 let btn = document.querySelector("#btn");
 
-btn.addEventListener("click", () => {
-  const word = document.querySelector("#word").textContent;
-  const input = document.querySelector("#input").value;
-  const lastIndex = word.length - 1;
-  const w = word[lastIndex];
-  const i = input[0];
-  if (w === i) {
-    document.querySelector("#word").textContent = input;
-    document.querySelector("#error").textContent = "";
-    document.querySelector("#input").value = "";
-    document.querySelector("#input").focus();
+function textAdd() {
+  if (dic.includes(inputTag.value)) {
+    errorTag.textContent = "중복입니다.";
   } else {
-    document.querySelector("#error").textContent = "땡";
-    document.querySelector("#input").value = "";
-    document.querySelector("#input").focus();
+    if (word[word.length - 1] === inputTag.value[0]) {
+      wordTag.textContent = inputTag.value;
+      word = inputTag.value;
+      console.log(dicTag.textContent);
+      dic.push(inputTag.value);
+      errorTag.textContent = "";
+      inputTag.value = "";
+      inputTag.focus();
+    } else {
+      errorTag.textContent = "땡";
+      inputTag.value = "";
+      inputTag.focus();
+    }
   }
-});
+}
+
+btn.addEventListener("click", textAdd);

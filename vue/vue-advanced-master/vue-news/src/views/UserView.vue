@@ -2,8 +2,8 @@
   <div>
     <user-profile>
       <div slot="username">{{userInfo.id}}</div>
-      <span slot="time">{{userInfo.created}}</span>
-      <span slot="karma">{{userInfo.karma}}</span>
+      <span slot="time">{{'Joined '+ userInfo.created}}</span>
+      <span slot="karma">{{ userInfo.karma}}</span>
     </user-profile>
   </div>
 </template>
