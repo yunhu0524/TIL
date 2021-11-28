@@ -12,11 +12,16 @@ export default {
     );
   },
   // #2
-  FETCH_LIST({ commit }, pageName) {
-    // #3
-    return fetchList(pageName).then(({ data }) =>
+  async FETCH_LIST({ commit }, pageName) {
+    try {
+      // #3
+      const response = await fetchList(pageName);
       // #4
-      commit("SET_LIST", data)
-    );
+      commit("SET_LIST", response.data);
+      return response;
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
   },
 };
