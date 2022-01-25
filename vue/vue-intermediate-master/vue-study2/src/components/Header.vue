@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div class="header" v-if="this.show">
-      Header
+    <div class="header" v-if="this.$store.state.show">
+      {{this.$store.state.headerText}}
       <input type="text" v-model="inputText">
-      <div :inputText="inputText">{{inputText}}</div>
+      <div>
+        {{inputText}}
+      </div>
     </div>
-    <Aside :textValue="inputText" @headerShowChild1='show = $event'></Aside>  
+    <Aside :textValue="inputText"></Aside>  
   </div>
 </template>
 
@@ -15,16 +17,15 @@ import Aside from './Side.vue'
 export default {
   data(){
     return{
-      inputText:"",
+      inputText: this.$store.state.textInput,
       show: true
     }
   },
   methods:{
-
   },
   components:{
     'Aside': Aside,
-  }
+  },
 }
 </script>
 

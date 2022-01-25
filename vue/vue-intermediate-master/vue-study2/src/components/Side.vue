@@ -2,10 +2,9 @@
   <div>
     <div class="flex-box">
       <div class="side">
-        {{textValue}}
-          <button @click="headerHide">버튼</button>
-      </div>
-      <Content :textValue="inputText" @headerShowChild='showEmit = $event'></Content>
+      <div>{{textValue}}</div>
+    </div>
+      <Content :textValue="inputText"></Content>
     </div>
   </div>
 </template>
@@ -25,9 +24,6 @@ export default {
     }
   },
   methods:{
-    headerHide(){
-      this.$emit('headerShowChild1', this.showEmit);
-    },
   },
   updated(){
     this.inputText = this.textValue
