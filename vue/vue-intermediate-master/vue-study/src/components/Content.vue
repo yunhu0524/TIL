@@ -5,8 +5,8 @@
         {{textValue}}
       </div>
       <div>{{showEmit}}</div>
-      <button @click="headerShow()" >on</button>
-      <button @click="headerHide()" >off</button>
+      <!-- <button @click="headerShow()" >on</button> -->
+      <button @click="handleToggle()" >toggle</button>
     </div>
   </div>
 </template>
@@ -20,14 +20,18 @@ export default {
     }
   },
   methods:{
-    headerHide(){
-      this.showEmit = false
-      this.$emit('headerShowChild', this.showEmit);
-    },
-    headerShow(){
-      this.showEmit = true
+    handleToggle(){
+      this.showEmit = !this.showEmit;
       this.$emit('headerShowChild', this.showEmit);
     }
+    // headerHide(){
+    //   this.showEmit = false
+    //   this.$emit('headerShowChild', this.showEmit);
+    // },
+    // headerShow(){
+    //   this.showEmit = true
+    //   this.$emit('headerShowChild', this.showEmit);
+    // }
   }
 }
 </script>

@@ -9,17 +9,10 @@ export const store = new Vuex.Store({
     textInput: "",
     headerText: "Header",
   },
-  getters: {
-    getShow(state) {
-      return !state.show;
-    },
-  },
+  getters: {},
   mutations: {
-    headerHide(state) {
-      state.show = false;
-    },
-    headerShow(state) {
-      state.show = true;
+    toggleBtn(state) {
+      state.show = !state.show;
     },
   },
 });

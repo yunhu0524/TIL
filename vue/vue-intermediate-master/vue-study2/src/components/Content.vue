@@ -2,35 +2,20 @@
   <div>
     <div class="content">
       <div>
-        {{textValue}}
+        {{$store.state.textInput}}
       </div>
-      <button @click="headerShow()" >on</button>
-      <button @click="headerHide()" >off</button>
+      <button @click="toggleBtn()">toggle</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:['textValue'],
-  data(){
-    return{
-      inputText: ""
-    }
-  },
   methods:{
-    headerHide(){
-      this.$store.commit('headerHide')
-      // this.$emit('headerShowChild', this.showEmit);
+    toggleBtn(){
+      this.$store.commit('toggleBtn')
     },
-    headerShow(){
-      this.$store.commit('headerShow')
-      // this.$emit('headerShowChild', this.showEmit);
-    }
   },
-  updated(){
-    this.inputText = this.$store.state.textInput
-  }
 }
 </script>
 

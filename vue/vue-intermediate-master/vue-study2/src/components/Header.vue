@@ -2,12 +2,9 @@
   <div>
     <div class="header" v-if="this.$store.state.show">
       {{this.$store.state.headerText}}
-      <input type="text" v-model="inputText">
-      <div>
-        {{inputText}}
-      </div>
+      <input type="text" v-model="$store.state.textInput">
     </div>
-    <Aside :textValue="inputText"></Aside>  
+    <Aside></Aside>  
   </div>
 </template>
 
@@ -17,8 +14,6 @@ import Aside from './Side.vue'
 export default {
   data(){
     return{
-      inputText: this.$store.state.textInput,
-      show: true
     }
   },
   methods:{

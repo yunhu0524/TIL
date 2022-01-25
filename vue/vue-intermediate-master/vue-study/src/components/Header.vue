@@ -5,7 +5,7 @@
       <input type="text" v-model="inputText">
       <div :inputText="inputText">{{inputText}}</div>
     </div>
-    <Aside :textValue="inputText" @headerShowChild1='show = $event'></Aside>  
+    <Aside :textValue="inputText" @headerShowChild1='onchange'></Aside>  
   </div>
 </template>
 
@@ -20,7 +20,10 @@ export default {
     }
   },
   methods:{
-
+    onchange(value){
+      console.log(value)
+      this.show = value
+    }
   },
   components:{
     'Aside': Aside,

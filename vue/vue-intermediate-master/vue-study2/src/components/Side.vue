@@ -2,9 +2,8 @@
   <div>
     <div class="flex-box">
       <div class="side">
-      <div>{{textValue}}</div>
     </div>
-      <Content :textValue="inputText"></Content>
+      <Content></Content>
     </div>
   </div>
 </template>
@@ -13,21 +12,15 @@
 import Content from './Content.vue'
 
 export default {
-  props:['textValue'],
   components:{
     'Content': Content,
   },
   data(){
     return{
-      inputText : this.textValue,
-      showEmit: true
     }
   },
   methods:{
   },
-  updated(){
-    this.inputText = this.textValue
-  }
 }
 </script>
 

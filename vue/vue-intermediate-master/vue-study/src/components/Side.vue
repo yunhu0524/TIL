@@ -5,7 +5,7 @@
         {{textValue}}
           <button @click="headerHide">버튼</button>
       </div>
-      <Content :textValue="inputText" @headerShowChild='showEmit = $event'></Content>
+      <Content :textValue="textValue" @headerShowChild='onChange'></Content>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   data(){
     return{
-      inputText : this.textValue,
+      // inputText : this.textValue,
       showEmit: true
     }
   },
@@ -28,10 +28,13 @@ export default {
     headerHide(){
       this.$emit('headerShowChild1', this.showEmit);
     },
+    onChange(value){
+      this.$emit('headerShowChild1', value);
+    }
   },
-  updated(){
-    this.inputText = this.textValue
-  }
+  // updated(){
+  //   this.inputText = this.textValue
+  // }
 }
 </script>
 
