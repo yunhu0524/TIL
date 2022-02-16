@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var users = [
+      {id:1,name:'ID',age:36},
+      {id:2,name:'BJ',age:32},
+      {id:3,name:'SD',age:32},
+      {id:4,name:'WE',age:27},
+      {id:5,name:'TR',age:25},
+      {id:6,name:'AS',age:26},
+      {id:7,name:'GF',age:31},
+      {id:8,name:'XL',age:23},
+    ];
+
+// 1. 명령형 코드
+  // 1. 30세 이상인 users를 거른다.
+    var temp_users = [];
+    for(var i=0; i < users.length; i++){
+      if(users[i].age>=30){
+        temp_users.push(users[i]);
+      }
+    }
+    console.log(temp_users);
+  // 2. 30세 이상인 users의 names를 수집한다.
+    var names=[];
+    for(var i=0; i < temp_users.length; i++){
+        names.push(temp_users[i].name);
+    }
+    console.log(names);
+  // 3. 30세 미만인 users를 거른다.
+    var temp_users = [];
+    for(var i=0; i < users.length; i++){
+      if(users[i].age<30){
+        temp_users.push(users[i]);
+      }
+    }
+    console.log(temp_users);
+  // 4. 30세 미만인 users의 ages를 수집한다.
+    var age=[];
+    for(var i=0; i < temp_users.length; i++){
+        age.push(temp_users[i].age);
+    }
+    console.log(age);
+
+// 2. _filter, _map으로 리팩토링
+function _filter(list, predi) {
+    var new_list =[];
+    for(var i =0; i < list.length; i++){
+      if(predi(list[i])){
+        new_list.push(list[i]);
+      }
+    }
+    return new_list
+  }  
+    console.log( _filter(users, function(user) { return user.age >= 30 }));
+    console.log( _filter(users, function(user) { return user.age < 30 }));
+    console.log( _filter([1,2,3,4], function(num) { return num % 2 }));
+    console.log( _filter([1,2,3,4], function(num) { return !(num % 2) }));
+
+function _map(list, mapper){
+  var new_list =[];
+  for(var i=0; i < list.length; i++){
+    new_list.push(mapper(list[i]));
+  }
+  return new_list;
+}
+
+var over_30 = _filter(users, function(user) { return user.age >= 30; });
+console.log(over_30);
+
+var names = _map(over_30, function(user) {
+  return user.name;
+});
+console.log(names);
+
+var under_30 = _filter(users, function(user) { return user.age < 30; });
+console.log(under_30);
+
+var ages = _map(under_30, function(user) {
+  return user.age;
+});
+console.log(ages);
+
+console.log(
+  _map(
+    _filter(users, function(user) { return user.age >= 30; }),
+    function(user) { return user.name; }));
+
+console.log(
+  _map(
+    _filter(users, function(user) { return user.age < 30; }),
+    function(user) { return user.age; }));
+</script>
+</body>
+</html>
