@@ -20,9 +20,10 @@ const twoSum2 = (nums, target) => {
 
   for (let i = 0; i < nums.length; i++) {
     const another = target - nums[i];
+    // 9 - 2 = 7
     
     if (another in map) {
-      // map 안에 anoter 값이 존재 한다면
+      // map 안에 anoter 값이 존재 한다면 (7 이 존재한다면)
       // map[anoter] = anoter 
       
       // console.log(map);  // { '2': 0, '3': 2, '11': 1 }
