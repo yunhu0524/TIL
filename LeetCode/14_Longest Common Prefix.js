@@ -11,11 +11,11 @@ var longestCommonPrefix = function (str) {
   }
   // str 에 첫번째 단어 길이
   const firstWordLength = str[0].length;
-  // str 에서 제일 작은 길이에 단어
-  let minLength = null;
+  // str 에서 제일 작은 길이 단어
+  let minLength = 0;
 
   // 제일 작은 길이 단어 찾기
-  for (let i = 0; i < str.length - 1; i++) {
+  for (let i = 0; i < str.length; i++) {
     minLength = Math.min(firstWordLength, str[i].length);
   }
   // minLength 로 sameWord 찾기
