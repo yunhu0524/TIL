@@ -1,35 +1,21 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
 var isValid = function (s) {
-  // s 가 홀수 일때 false
-  if (s.length & 1) return false;
-  
-  // 답
-  const answer = true;
-  const map = {
-    "(": ")",
-    "{": "}",
-    "[": "]",
-  };
-  // 열린 괄호
-  const open = Object.keys(map);
-  // 스택
-  const stack = s.toString().split('');
 
-  for (let el of s) {
-    // 열린 괄호 push
-    if (open.includes(el)) stack.push(el);
-    // 닫힌 괄호만 있을때.
-    if (stack.length === 0) return false;
-    // 닫힌 괄호 pop
-    if (map[stack[stack.length - 1]] === el) stack.pop();
+  // 비교
+  let map = { "(": ")", "[": "]", "{": "}" };
+  // 스택 
+  let stack = [];
+
+  for (let ch of s) {
+    // 존재 하면 push
+    if (map[ch]) {
+      stack.push(map[ch]);
+      // 스택에 있는 값과 같으면 pop
+    } else if (stack.length > 0 && stack[stack.length - 1] == ch) {
+      stack.pop();
+      // 나머지 false
+    } else return false;
   }
-  // 마지막까지 없으면 false
-  if (stack.length !== 0) return false;
-
-  return answer;
+  return stack.length == 0;
 };
 
-console.log(isValid("([}}])"));
+console.log(isValid('{()}'));
